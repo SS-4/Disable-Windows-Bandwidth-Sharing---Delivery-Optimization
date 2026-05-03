@@ -62,4 +62,17 @@ If you want to opt back into sharing your bandwidth with other Windows PCs:
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Value 3 -Force
 ```
 
+## Confirm Delivery Optimization is Disabled
+
+Run this command in **PowerShell as Administrator**:
+
+```powershell
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode"
+```
+Expected output:
+DODownloadMode : 0
+
+
+
+
 
