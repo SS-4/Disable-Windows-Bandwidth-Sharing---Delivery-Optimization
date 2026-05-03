@@ -51,3 +51,15 @@ Open **PowerShell as Administrator**, then paste:
 
 ```powershell
 New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Force | Out-Null; Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Value 0 -Type DWord -Force
+```
+
+
+## Revert (Re-enable P2P seeding)
+
+If you want to opt back into sharing your bandwidth with other Windows PCs:
+
+```powershell
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Value 3 -Force
+```
+
+
